@@ -1,0 +1,100 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap");
+
+.heading{
+    font-family: "Dancing Script", cursive;
+font-weight: 500;
+font-size: 55px;
+}
+.container5{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.list-items{
+    text-decoration: none;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 40%;
+}
+.button{
+    font-size: 27px;
+    font-weight: lighter;
+    font-family: "Open Sans", sans-serif;
+    cursor: pointer;
+}
+.cards-container{
+    width: 90%;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 50px;
+}
+.card{
+    background-color: #0c0c0c;
+    width: 500px;
+    height: 650px;
+    border-radius: 20px;
+    border: none;
+    margin-bottom: 40px;
+
+}
+.card-image-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height:50%;
+    background-color: #f1f2f3;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border-bottom-left-radius: 80px;
+}
+.image{
+    height: 200px;
+    width: 200px;
+}
+.image:hover{
+    height: 220px;
+    width: 220px;
+}
+.card-heading{
+    color: white;
+    font-size: 30px;
+}
+.card-details-container{
+    padding: 40px;
+
+}
+.description{
+    color: white;
+    font-size: 23px;
+    font-weight: lighter;
+    margin-top: 22px;
+}
+.price-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.price{
+    color: white;
+    font-size: 25px;
+}
+.cart-icon-container{
+    width: 55px;
+    height: 55px;
+    background-color: yellowgreen;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50px;
+}
+.cart-icon{
+    color: white;
+    font-size: 25px;
+}
