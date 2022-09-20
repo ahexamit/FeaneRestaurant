@@ -1,59 +1,36 @@
 <app-header></app-header>
 <div class="container5 mt-5">
-    <strong class="heading">Our Menu</strong>
-    <ul class="list-items">
-        <li class="button" (click)="showAll()">All</li>
-        <li class="button"> Burger</li>
-        <li class="button">pizza</li>
-        <li class="button">fruits</li>
-        <li class="button">coldrinks</li>
-
-    </ul>
-    <div class="cards-container">
-        <div class="card">
-            <div class="card-image-container">
-                <img src="https://technext.github.io/feane/images/f1.png" class="image" />
-            </div>
-            <div class="card-details-container">
-                <h3 class="card-heading">Delicious Pizza</h3>
-                <p class="description">Veniam debitis quaerat officiis quasi cupiditate quo, quisquam velit, magnam voluptatem repellendus sed eaque</p>
-                <div class="price-container">
-                    <p class="price">$54</p>
-                    <div class="cart-icon-container">
-                        <i class="fa-solid fa-cart-shopping cart-icon"></i>
-                    </div>
-                </div>
-            </div>
+  <strong class="heading">Our Menu</strong>
+  <ul class="list-items">
+    <li class="button" (click)="showAll('all')">All</li>
+    <li class="button" (click)="showAll('drinks')">Drinks</li>
+    <li class="button" (click)="showAll('north')">North Indian</li>
+    <li class="button" (click)="showAll('south')">South Indian</li>
+    <li class="button" (click)="showAll('fast')">Fast Food</li>
+  </ul>
+  <div class="cards-container">
+    <div class="card" *ngFor="let item of menuData">
+      <div class="card-image-container">
+        <img src="{{ item.imageUrl }}" class="image" />
+      </div>
+      <div class="card-details-container">
+        <h3 class="card-heading">{{ item.title }}</h3>
+        <p class="description">{{ item.description }}</p>
+        <div class="price-container">
+          <p class="price">{{ item.price }}</p>
+          <div class="cart-icon-container">
+            <i class="fa-solid fa-cart-shopping cart-icon"></i>
+          </div>
         </div>
-        <div class="card">
-            <div class="card-image-container">
-                <img src="https://technext.github.io/feane/images/f1.png" class="image" />
-            </div>
-            <div class="card-details-container">
-                <h3 class="card-heading">Delicious Pizza</h3>
-                <p class="description">Veniam debitis quaerat officiis quasi cupiditate quo, quisquam velit, magnam voluptatem repellendus sed eaque</p>
-                <div class="price-container">
-                    <p class="price">$54</p>
-                    <div class="cart-icon-container">
-                        <i class="fa-solid fa-cart-shopping cart-icon"></i>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-image-container">
-                <img src="https://technext.github.io/feane/images/f1.png" class="image" />
-            </div>
-            <div class="card-details-container">
-                <h3 class="card-heading">Delicious Pizza</h3>
-                <p class="description">Veniam debitis quaerat officiis quasi cupiditate quo, quisquam velit, magnam voluptatem repellendus sed eaque</p>
-                <div class="price-container">
-                    <p class="price">$54</p>
-                    <div class="cart-icon-container">
-                        <i class="fa-solid fa-cart-shopping cart-icon"></i>
-                    </div>
-                </div>
-            </div>
-        </div>
+      </div>
     </div>
+  </div>
+  <button
+    class="btn btn-info m-3"
+    *ngIf="count < localMenuData.length"
+    (click)="seeMore()"
+  >
+    <strong>See More...</strong>
+  </button>
 </div>
+<app-footer></app-footer>

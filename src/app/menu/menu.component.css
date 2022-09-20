@@ -28,11 +28,11 @@ font-size: 55px;
     cursor: pointer;
 }
 .cards-container{
-    width: 90%;
+    width: 87%;
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: flex-start;
     margin-top: 50px;
 }
 .card{
@@ -42,6 +42,7 @@ font-size: 55px;
     border-radius: 20px;
     border: none;
     margin-bottom: 40px;
+    margin-right: 50px;
 
 }
 .card-image-container{
@@ -57,6 +58,7 @@ font-size: 55px;
 .image{
     height: 200px;
     width: 200px;
+    border-radius: 30px;
 }
 .image:hover{
     height: 220px;
@@ -68,6 +70,7 @@ font-size: 55px;
 }
 .card-details-container{
     padding: 40px;
+   
 
 }
 .description{
@@ -80,6 +83,7 @@ font-size: 55px;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    align-self: flex-end;
 }
 .price{
     color: white;
