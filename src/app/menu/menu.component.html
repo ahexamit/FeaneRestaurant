@@ -18,8 +18,10 @@
         <p class="description">{{ item.description }}</p>
         <div class="price-container">
           <p class="price">{{ item.price }}</p>
-          <div class="cart-icon-container">
+          <div class="cart-icon-container"> <button (click)="addcart(item)">
             <i class="fa-solid fa-cart-shopping cart-icon"></i>
+
+          </button>
           </div>
         </div>
       </div>

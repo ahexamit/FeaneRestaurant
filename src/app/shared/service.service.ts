@@ -6,8 +6,15 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class ServiceService {
-  constructor(private http: HttpClient) {}
+  public arrayData: Array<any> = [];
+  constructor(private http: HttpClient) {
+  }
+public setData(data:any){
+  this.arrayData.push(data);
+  console.log(this.arrayData);
 
+
+}
   public getJson(): Observable<any> {
     return this.http.get('./assets/data.json');
   }

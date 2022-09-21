@@ -11,7 +11,7 @@ export class MenuComponent implements OnInit {
   public count: number = 6;
   public localMenuData: Array<any> = [];
 
-  constructor(private sourceData: ServiceService) {
+  constructor(public sourceData: ServiceService) {
     this.sourceData.getJson().subscribe((data) => {
       this.localMenuData = data;
       this.menuData = this.localMenuData.slice(0, 6);
@@ -50,5 +50,9 @@ export class MenuComponent implements OnInit {
         })
         .slice(0, this.count);
     }
+  }
+  public addcart(item:Array<any>){
+    console.log(item);
+    this.sourceData.setData(item);
   }
 }
