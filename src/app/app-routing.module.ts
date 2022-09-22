@@ -5,15 +5,19 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { MenuComponent } from './menu/menu.component';
 
 const routes: Routes = [
-  {path:'' ,component:DashboardComponent},
-  {path:'menu' , component:MenuComponent},
-  {path:'cart' , component:CartComponent},
-
-  
+  {
+    path: 'menu',
+    loadChildren: () => import('./menu/menu.module').then((m) => m.MenuModule),
+  },
+  {
+    path: 'cart',
+    loadChildren: () => import('./cart/cart.module').then((m) => m.CartModule),
+  },
+  { path: '', component: DashboardComponent },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

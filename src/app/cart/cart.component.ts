@@ -10,12 +10,12 @@ export class CartComponent implements OnInit {
   public cartData: Array<any> = [];
   public totalPrice: Number = 0;
 
-  constructor(public getData: ServiceService) {
-    this.getData.arrayData.map((res) => {
+  constructor(public getData: ServiceService) {}
+
+  ngOnInit(): void {
+    this.getData.set_Data.map((res) => {
       console.log(res);
       this.cartData.push(res);
     });
   }
-
-  ngOnInit(): void {}
 }

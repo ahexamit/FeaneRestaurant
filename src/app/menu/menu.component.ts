@@ -11,15 +11,19 @@ export class MenuComponent implements OnInit {
   public count: number = 6;
   public localMenuData: Array<any> = [];
 
-  constructor(public sourceData: ServiceService) {
-    this.sourceData.getJson().subscribe((data) => {
+  constructor(public _getData: ServiceService) {
+    console.log('menu');
+
+  
+  }
+
+  ngOnInit(): void {
+    this._getData.getJson().subscribe((data) => {
       this.localMenuData = data;
       this.menuData = this.localMenuData.slice(0, 6);
       console.log(data);
     });
   }
-
-  ngOnInit(): void {}
 
   public currentCategory = 'all';
   //Method to see category wise array items//
@@ -53,6 +57,6 @@ export class MenuComponent implements OnInit {
   }
   public addcart(item:Array<any>){
     console.log(item);
-    this.sourceData.setData(item);
+    this._getData.setData(item);
   }
 }
