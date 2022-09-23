@@ -7,7 +7,6 @@
             <div class="card-body p-4">
               <div class="row">
                 <div class="col-lg-7">
-                 
                   <hr />
 
                   <div
@@ -17,7 +16,7 @@
                       <p class="mb-1"><strong>Shopping cart</strong></p>
                     </div>
                   </div>
-                  <div class="cartItems mb-2" *ngFor="let item of cartData">
+                  <div class="cartItems mb-2" *ngFor="let item of product">
                     <div class="card mb-3">
                       <div class="card-body">
                         <div class="d-flex justify-content-between">
@@ -41,7 +40,13 @@
                             <div style="width: 80px">
                               <h5 class="mb-0">{{ item.price }}</h5>
                             </div>
-                            <!-- <a href="#!" style="color: #cecece;"><i class="fas fa-trash-alt"></i></a> -->
+
+                            <button
+                              (click)="removeItem(item)"
+                              class="btn btn-danger"
+                            >
+                              <i class="fas fa-trash-alt"></i>
+                            </button>
                           </div>
                         </div>
                       </div>
@@ -49,7 +54,7 @@
                   </div>
                   <div class="mt-1">
                     <label>Total Price:</label>
-                    <p>{{ totalPrice }}</p>
+                    <p>{{ grandTotal }}</p>
                   </div>
                 </div>
               </div>

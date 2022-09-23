@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ServiceService } from '../shared/service.service';
+import { CartService } from '../shared/cart.service';
+import { DataService } from '../shared/data.service';
 
 @Component({
   selector: 'app-menu',
@@ -9,12 +10,10 @@ import { ServiceService } from '../shared/service.service';
 export class MenuComponent implements OnInit {
   public menuData: Array<any> = [];
   public count: number = 6;
-  public localMenuData: Array<any> = [];
+  public localMenuData:Array<any>=[];
 
-  constructor(public _getData: ServiceService) {
+  constructor(public _getData: DataService, private cartService: CartService) {
     console.log('menu');
-
-  
   }
 
   ngOnInit(): void {
@@ -22,6 +21,11 @@ export class MenuComponent implements OnInit {
       this.localMenuData = data;
       this.menuData = this.localMenuData.slice(0, 6);
       console.log(data);
+      this.localMenuData.forEach((a: any) => {
+        Object.assign(a, { quantity: 1, total: +a.price });
+    console.log(typeof a.total);
+        
+      });
     });
   }
 
@@ -35,7 +39,7 @@ export class MenuComponent implements OnInit {
     } else {
       console.log(event);
       this.menuData = this.localMenuData
-        .filter((x) => {
+        .filter((x:any) => {
           return x.categories == event;
         })
         .slice(0, 4);
@@ -49,14 +53,14 @@ export class MenuComponent implements OnInit {
       console.log(this.menuData);
     } else {
       this.menuData = this.localMenuData
-        .filter((x) => {
+        .filter((x:any) => {
           return x.categories == this.currentCategory;
         })
         .slice(0, this.count);
     }
   }
-  public addcart(item:Array<any>){
-    console.log(item);
-    this._getData.setData(item);
+
+  public addToCart(item: any) {
+    this.cartService.addToCart(item);
   }
 }

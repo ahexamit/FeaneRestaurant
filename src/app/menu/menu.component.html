@@ -16,9 +16,9 @@
         <h3 class="card-heading">{{ item.title }}</h3>
         <p class="description">{{ item.description }}</p>
         <div class="price-container">
-          <p class="price">{{ item.price }}</p>
+          <p class="price">${{ item.price }}</p>
           <div class="cart-icon-container"> 
-            <i class="fa-solid fa-cart-shopping cart-icon" (click)="addcart(item)"></i>
+            <i class="fa-solid fa-cart-shopping cart-icon" (click)="addToCart(item)"></i>
 
           </div>
         </div>
