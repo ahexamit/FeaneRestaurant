@@ -19,17 +19,31 @@ export class CartService {
     this.productList.next(product);
   }
   public addToCart(product: any) {
-    this.cartItemList.push(product);
+    const dummyData = this.cartItemList.find(
+      (item: any) => item.title === product.title
+    ); // find product by name
+    console.log(dummyData);
+    if (!dummyData) {
+      this.cartItemList.push(product);
+    } else {
+      const newArray = this.cartItemList.map((each: any) => {
+        if (each.title === product.title) {
+          return { ...each, quantity: each.quantity + 1 };
+        }
+        return each;
+      });
+      this.cartItemList = newArray;
+      console.log(this.cartItemList);
+    }
     this.productList.next(this.cartItemList);
     this.getTotalPrice();
     console.log(this.cartItemList);
   }
-  public getTotalPrice(): number{
-    let grandTotal:number = 0;
+  public getTotalPrice(): number {
+    let grandTotal: number = 0;
     this.cartItemList.map((a: any) => {
-      grandTotal = grandTotal+ a.total;
-    console.log(grandTotal);
-    
+      grandTotal = grandTotal + a.quantity * a.price;
+      console.log(grandTotal);
     });
     return grandTotal;
   }
