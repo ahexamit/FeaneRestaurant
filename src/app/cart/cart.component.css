@@ -1,5 +1,6 @@
-/* @media (min-width: 1025px) {
-    .h-custom {
-    height: 100vh !important;
-    }
-    } */
+.container{
+    width:41%;
+}
+.insideItem{
+    width: 611px;
+}
