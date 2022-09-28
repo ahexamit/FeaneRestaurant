@@ -57,9 +57,8 @@
 
                       <input
                         type="text"
-                        id="typeText"
                         class="form-control form-control-lg"
-                        formGroupName="name"
+                        formControlName="name"
                         [ngClass]="{
                           'is-invalid': submitted && f['name'].errors
                         }"
@@ -83,7 +82,7 @@
                         type="text"
                         id="typeText"
                         class="form-control form-control-lg"
-                        formGroupName="mobile"
+                        formControlName="mobile"
                         [ngClass]="{
                           'is-invalid': submitted && f['mobile'].errors
                         }"
@@ -106,7 +105,7 @@
                         type="text"
                         id="typeText"
                         class="form-control form-control-lg"
-                        formGroupName="table"
+                        formControlName="table"
                         [ngClass]="{
                           'is-invalid': submitted && f['table'].errors
                         }"

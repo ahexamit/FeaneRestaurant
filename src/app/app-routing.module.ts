@@ -2,7 +2,6 @@ import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CartComponent } from './cart/cart.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { MenuComponent } from './menu/menu.component';
 
 const routes: Routes = [
   {
@@ -16,6 +15,10 @@ const routes: Routes = [
   {
     path: 'order',
     loadChildren: () => import('./placeorder/placeorder.module').then((m) => m.PlaceorderModule),
+  },
+  {
+    path: 'book',
+    loadChildren: () => import('./booktable/booktable.module').then((m) => m.BooktableModule),
   },
   { path: '', component: DashboardComponent },
 ];

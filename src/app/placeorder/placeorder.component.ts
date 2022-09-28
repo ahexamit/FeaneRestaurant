@@ -32,6 +32,8 @@ export class PlaceorderComponent implements OnInit {
   }
   public submit() {
     this.submitted = true;
+  
+    console.log(  this.detailForm.get('name')?.value)
   }
   public formData() {
     this.detailForm = this.fb.group({

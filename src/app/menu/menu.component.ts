@@ -10,7 +10,7 @@ import { DataService } from '../shared/data.service';
 export class MenuComponent implements OnInit {
   public menuData: Array<any> = [];
   public count: number = 6;
-  public localMenuData:Array<any>=[];
+  public localMenuData: Array<any> = [];
 
   constructor(public _getData: DataService, private cartService: CartService) {
     console.log('menu');
@@ -23,8 +23,7 @@ export class MenuComponent implements OnInit {
       console.log(data);
       this.localMenuData.forEach((a: any) => {
         Object.assign(a, { quantity: 1, total: +a.price });
-    console.log(typeof a.total);
-        
+        console.log(typeof a.total);
       });
     });
   }
@@ -39,8 +38,8 @@ export class MenuComponent implements OnInit {
     } else {
       console.log(event);
       this.menuData = this.localMenuData
-        .filter((x:any) => {
-          return x.categories == event;
+        .filter((x: any) => {
+          return x.categories === event;
         })
         .slice(0, 4);
     }
@@ -48,19 +47,17 @@ export class MenuComponent implements OnInit {
   //Method to see more array items//
   public seeMore() {
     this.count = this.count + 3;
-    if (this.currentCategory == 'all') {
+    if (this.currentCategory === 'all') {
       this.menuData = this.localMenuData.slice(0, this.count);
       console.log(this.menuData);
     } else {
       this.menuData = this.localMenuData
-        .filter((x:any) => {
-          return x.categories == this.currentCategory;
-        })
+        .filter((x: any) => x.categories == this.currentCategory)
         .slice(0, this.count);
     }
   }
 
-  public addToCart(item: any) {
+  public addToCart(item:any) {
     this.cartService.addToCart(item);
   }
 }

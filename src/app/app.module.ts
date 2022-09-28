@@ -10,6 +10,7 @@ import { FooterComponent } from './footer/footer.component';
 import { CartComponent } from './cart/cart.component';
 import { PlaceorderComponent } from './placeorder/placeorder.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { BooktableComponent } from './booktable/booktable.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     DashboardComponent,
     FooterComponent,
     CartComponent,
-    PlaceorderComponent
+    PlaceorderComponent,
+    BooktableComponent
   ],
   imports: [
     BrowserModule,
