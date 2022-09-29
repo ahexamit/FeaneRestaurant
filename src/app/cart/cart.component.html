@@ -58,7 +58,7 @@
                         <p>${{ grandTotal }}</p>
                     </div>
                     <div class="col-md-3 ms-5 mt-3">
-                      <button class="btn btn-danger" routerLink="/order">Place Order</button>
+                      <button class="btn btn-danger" routerLink="/order" [disabled] ="!placeOrder" >Place Order</button>
                     </div>
                    </div>
                     
