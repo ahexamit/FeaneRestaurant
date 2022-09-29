@@ -14,11 +14,11 @@ export class CartService {
     return this.productList.asObservable();
   }
 
-  public setProducts(product: any) {
+  public setProducts(product: any): void {
     this.cartItemList.push(...product);
     this.productList.next(product);
   }
-  public addToCart(product: any) {
+  public addToCart(product: any): void {
     const dummyData = this.cartItemList.find(
       (item: any) => item.title === product.title
     ); // find product by name
@@ -48,7 +48,7 @@ export class CartService {
     return grandTotal;
   }
 
-  public removeCartItem(product: any) {
+  public removeCartItem(product: any): void {
     this.cartItemList.map((a: any, index: any) => {
       if (product.id === a.id) {
         this.cartItemList.splice(index, 1);

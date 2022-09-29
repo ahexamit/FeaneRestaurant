@@ -4,20 +4,16 @@ import { CartService } from '../shared/cart.service';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css']
+  styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent implements OnInit {
-  public totalItem : number = 0;
+  public totalItem: number = 0;
 
-  constructor(private cartService:CartService) { 
-
-  }
+  constructor(private cartService: CartService) {}
 
   ngOnInit(): void {
-    this.cartService.getProducts().subscribe((res)=>{
-this.totalItem = res.length
-    })
-
+    this.cartService.getProducts().subscribe((res) => {
+      this.totalItem = res.length;
+    });
   }
-
 }

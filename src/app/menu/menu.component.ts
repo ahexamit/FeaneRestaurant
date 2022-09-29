@@ -11,12 +11,17 @@ export class MenuComponent implements OnInit {
   public menuData: Array<any> = [];
   public count: number = 6;
   public localMenuData: Array<any> = [];
+  public currentCategory = 'all';
 
   constructor(public _getData: DataService, private cartService: CartService) {
     console.log('menu');
   }
 
   ngOnInit(): void {
+    this.getData();
+  }
+  //Getting Data and fliter it //
+  public getData(): void {
     this._getData.getJson().subscribe((data) => {
       this.localMenuData = data;
       this.menuData = this.localMenuData.slice(0, 6);
@@ -27,10 +32,8 @@ export class MenuComponent implements OnInit {
       });
     });
   }
-
-  public currentCategory = 'all';
   //Method to see category wise array items//
-  public showAll(event: string) {
+  public showAll(event: string): void {
     this.currentCategory = event;
     if (event == 'all') {
       this.menuData = this.localMenuData.slice(0, 6);
@@ -45,7 +48,7 @@ export class MenuComponent implements OnInit {
     }
   }
   //Method to see more array items//
-  public seeMore() {
+  public seeMore(): void {
     this.count = this.count + 3;
     if (this.currentCategory === 'all') {
       this.menuData = this.localMenuData.slice(0, this.count);
@@ -57,7 +60,7 @@ export class MenuComponent implements OnInit {
     }
   }
 
-  public addToCart(item:any) {
+  public addToCart(item: any): void {
     this.cartService.addToCart(item);
   }
 }

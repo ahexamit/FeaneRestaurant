@@ -27,17 +27,15 @@ export class PlaceorderComponent implements OnInit {
     });
     this.formData();
   }
-  get f(): { [key: string]: AbstractControl } {
+  public get f(): { [key: string]: AbstractControl } {
     return this.detailForm.controls;
   }
-  public submit() {
+  public submit(): void {
     this.submitted = true;
-  
-    console.log(  this.detailForm.get('name')?.value)
   }
-  public formData() {
+  public formData(): void {
     this.detailForm = this.fb.group({
-      name: ['', Validators.required],
+      name: ['',[ Validators.required]],
       mobile: ['', Validators.required],
       table: ['', Validators.required],
     });
