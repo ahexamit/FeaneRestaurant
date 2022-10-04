@@ -30,6 +30,9 @@
                         *ngIf="submitted && f['name'].errors"
                         class="invalid-feedback"
                       >
+                        <div *ngIf="f['name'].errors['pattern']">
+                          Only Alphabet Allowed
+                        </div>
                         <div *ngIf="f['name'].errors['required']">
                           Name is Required
                         </div>
@@ -67,7 +70,7 @@
                       >
 
                       <input
-                        type="text"
+                        type="number"
                         id="typeText"
                         class="form-control form-control-lg"
                         formControlName="mobile"
@@ -79,6 +82,9 @@
                         *ngIf="submitted && f['mobile'].errors"
                         class="invalid-feedback"
                       >
+                        <div *ngIf="f['mobile'].errors['pattern']">
+                          Only Numbers Allowed
+                        </div>
                         <div *ngIf="f['mobile'].errors['required']">
                           Mobile Number Required
                         </div>
@@ -121,9 +127,15 @@
                           'is-invalid': submitted && f['people'].errors
                         }"
                       />
-                      <div *ngIf="submitted && f['people'].errors">
+                      <div
+                        *ngIf="submitted && f['people'].errors"
+                        class="invalid-feedback"
+                      >
                         <div *ngIf="f['people'].errors['required']">
                           Field is Mandatory
+                        </div>
+                        <div *ngIf="f['people'].errors['pattern']">
+                          Please enter a valid number
                         </div>
                       </div>
                     </div>

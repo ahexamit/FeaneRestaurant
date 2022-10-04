@@ -35,7 +35,7 @@ export class MenuComponent implements OnInit {
   //Method to see category wise array items//
   public showAll(event: string): void {
     this.currentCategory = event;
-    if (event == 'all') {
+    if (event === 'all') {
       this.menuData = this.localMenuData.slice(0, 6);
       this.count = 6;
     } else {

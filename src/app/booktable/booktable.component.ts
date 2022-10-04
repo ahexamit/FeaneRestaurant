@@ -22,11 +22,11 @@ export class BooktableComponent implements OnInit {
   }
   public bookForm(): void {
     this.bookTableForm = this.fb.group({
-      name: ['', Validators.required],
+      name: ['', [Validators.required,Validators.pattern('^[a-zA-Z \-\']+')]],
       email: ['', [Validators.required, Validators.email]],
-      mobile: ['', Validators.required],
+      mobile: ['', [Validators.required, Validators.pattern("^[0-9]*$")]],
       time: ['', Validators.required],
-      people: ['', Validators.required],
+      people: ['', [Validators.required, Validators.pattern("^[0-9]*$")]],
     });
   }
   public get f(): { [key: string]: AbstractControl } {
