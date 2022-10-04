@@ -22,12 +22,12 @@
                         id="typeText"
                         class="form-control form-control-lg"
                         [ngClass]="{
-                          'is-invalid': submitted && f['name'].errors
+                          'is-invalid': f['name'].dirty && f['name'].errors
                         }"
                         formControlName="name"
                       />
                       <div
-                        *ngIf="submitted && f['name'].errors"
+                        *ngIf="f['name'].dirty && f['name'].errors"
                         class="invalid-feedback"
                       >
                         <div *ngIf="f['name'].errors['pattern']">
@@ -49,11 +49,11 @@
                         class="form-control form-control-lg"
                         formControlName="email"
                         [ngClass]="{
-                          'is-invalid': submitted && f['email'].errors
+                          'is-invalid': f['email'].dirty && f['email'].errors
                         }"
                       />
                       <div
-                        *ngIf="submitted && f['email'].errors"
+                        *ngIf="f['email'].dirty && f['email'].errors"
                         class="invalid-feedback"
                       >
                         <div *ngIf="f['email'].errors['required']">
@@ -75,15 +75,15 @@
                         class="form-control form-control-lg"
                         formControlName="mobile"
                         [ngClass]="{
-                          'is-invalid': submitted && f['mobile'].errors
+                          'is-invalid': f['mobile'].dirty && f['mobile'].errors
                         }"
                       />
                       <div
-                        *ngIf="submitted && f['mobile'].errors"
+                        *ngIf="f['mobile'].dirty && f['mobile'].errors"
                         class="invalid-feedback"
                       >
                         <div *ngIf="f['mobile'].errors['pattern']">
-                          Only Numbers Allowed
+                          Must contain 10 numbers
                         </div>
                         <div *ngIf="f['mobile'].errors['required']">
                           Mobile Number Required
@@ -101,11 +101,11 @@
                         class="form-control form-control-lg"
                         formControlName="time"
                         [ngClass]="{
-                          'is-invalid': submitted && f['time'].errors
+                          'is-invalid': f['time'].dirty && f['time'].errors
                         }"
                       />
                       <div
-                        *ngIf="submitted && f['time'].errors"
+                        *ngIf="f['time'].dirty && f['time'].errors"
                         class="invalid-feedback"
                       >
                         <div *ngIf="f['time'].errors['required']">
@@ -124,11 +124,11 @@
                         class="form-control form-control-lg"
                         formControlName="people"
                         [ngClass]="{
-                          'is-invalid': submitted && f['people'].errors
+                          'is-invalid': f['people'].dirty && f['people'].errors
                         }"
                       />
                       <div
-                        *ngIf="submitted && f['people'].errors"
+                        *ngIf="f['people'].dirty && f['people'].errors"
                         class="invalid-feedback"
                       >
                         <div *ngIf="f['people'].errors['required']">
@@ -143,6 +143,7 @@
                     <button
                       type="button"
                       class="btn btn-primary btn-block btn-lg"
+                      [disabled]="bookTableForm.invalid"
                       (click)="submit()"
                     >
                       Book

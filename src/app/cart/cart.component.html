@@ -1,67 +1,73 @@
 <div class="container-fluid">
-    <section class="h-100 h-custom" style="background-color: #eee ;">
-      <div class="container py-5 h-100">
-        <div class="row d-flex justify-content-center align-items-center h-100">
-          <div class="col">
-            <div class="card w-100">
-              <div class="card-body p-4">
-                <div class="row">
-                  <div class="col-lg-7 insideItem">
-                    <hr />
-  
-                    <div
-                      class="d-flex justify-content-between align-items-center mb-4"
-                    >
-                      <div>
-                        <p class="mb-1"><strong>Shopping cart</strong></p>
-                      </div>
+  <section class="h-100 h-custom" style="background-color: #eee">
+    <div class="container py-5 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col">
+          <div class="card w-100">
+            <div class="card-body p-4">
+              <div class="row">
+                <div class="col-lg-7 insideItem">
+                  <hr />
+
+                  <div
+                    class="d-flex justify-content-between align-items-center mb-4"
+                  >
+                    <div>
+                      <p class="mb-1"><strong>Shopping cart</strong></p>
                     </div>
-                    <div class="cartItems mb-2" *ngFor="let item of product">
-                      <div class="card mb-3">
-                        <div class="card-body">
-                          <div class="d-flex justify-content-between">
-                            <div class="d-flex flex-row align-items-center">
-                              <div>
-                                <img
-                                  src="{{ item.imageUrl }}"
-                                  class="img-fluid rounded-3"
-                                  alt="Shopping item"
-                                  style="width: 65px"
-                                />
-                              </div>
-                              <div class="ms-3">
-                                <h5>{{ item.title }}</h5>
-                              </div>
+                  </div>
+                  <div class="cartItems mb-2" *ngFor="let item of product">
+                    <div class="card mb-3">
+                      <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                          <div class="d-flex flex-row align-items-center">
+                            <div>
+                              <img
+                                src="{{ item.imageUrl }}"
+                                class="img-fluid rounded-3"
+                                alt="Shopping item"
+                                style="width: 65px"
+                              />
                             </div>
-                            <div class="d-flex flex-row align-items-center">
-                              <div style="width: 50px">
-                                <h5 class="fw-normal mb-0">{{item.quantity}}</h5>
-                              </div>
-                              <div style="width: 80px">
-                                <h5 class="mb-0">{{ item.price }}</h5>
-                              </div>
-  
-                              <button
-                                (click)="removeItem(item)"
-                                class="btn btn-danger"
-                              >
-                                <i class="fas fa-trash-alt"></i>
-                              </button>
+                            <div class="ms-3">
+                              <h5>{{ item.title }}</h5>
                             </div>
+                          </div>
+                          <div class="d-flex flex-row align-items-center">
+                            <div style="width: 50px">
+                              <h5 class="fw-normal mb-0">
+                                {{ item.quantity }}
+                              </h5>
+                            </div>
+                            <div style="width: 80px">
+                              <h5 class="mb-0">{{ item.price }}</h5>
+                            </div>
+
+                            <button
+                              (click)="removeItem(item)"
+                              class="btn btn-danger"
+                            >
+                              <i class="fas fa-trash-alt"></i>
+                            </button>
                           </div>
                         </div>
                       </div>
                     </div>
-                   <div class="row">
+                  </div>
+                  <div class="row">
                     <div class="col-md-6 mt-1">
-                        <label><strong>Total Price:</strong></label>
-                        <p>${{ grandTotal }}</p>
+                      <label><strong>Total Price:</strong></label>
+                      <p>${{ grandTotal }}</p>
                     </div>
                     <div class="col-md-3 ms-5 mt-3">
-                      <button class="btn btn-danger" routerLink="/order" [disabled] ="!placeOrder" >Place Order</button>
+                      <button
+                        class="btn btn-danger"
+                        routerLink="/order"
+                        [disabled]="!placeOrder"
+                      >
+                        Place Order
+                      </button>
                     </div>
-                   </div>
-                    
                   </div>
                 </div>
               </div>
@@ -69,8 +75,6 @@
           </div>
         </div>
       </div>
-    </section>
-  </div>
-
-
-
+    </div>
+  </section>
+</div>

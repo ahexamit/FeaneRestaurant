@@ -60,11 +60,11 @@
                         class="form-control form-control-lg"
                         formControlName="name"
                         [ngClass]="{
-                          'is-invalid': submitted && f['name'].errors
+                          'is-invalid': f['name'].dirty && f['name'].errors
                         }"
                       />
                       <div
-                        *ngIf="submitted && f['name'].errors"
+                        *ngIf="f['name'].dirty && f['name'].errors"
                         class="invalid-feedback"
                       >
                         <div *ngIf="f['name'].errors['required']">
@@ -84,13 +84,17 @@
                         class="form-control form-control-lg"
                         formControlName="mobile"
                         [ngClass]="{
-                          'is-invalid': submitted && f['mobile'].errors
+                          'is-invalid': f['mobile'].dirty && f['mobile'].errors
                         }"
                       />
                       <div
-                        *ngIf="submitted && f['mobile'].errors"
+                        *ngIf="f['mobile'].dirty && f['mobile'].errors"
                         class="invalid-feedback"
                       >
+                      <div *ngIf="f['mobile'].errors['pattern']">
+                        Must contain 10 numbers
+
+                      </div>
                         <div *ngIf="f['mobile'].errors['required']">
                           Mobile No. is required
                         </div>
@@ -107,20 +111,24 @@
                         class="form-control form-control-lg"
                         formControlName="table"
                         [ngClass]="{
-                          'is-invalid': submitted && f['table'].errors
+                          'is-invalid': f['table'].dirty && f['table'].errors
                         }"
                       />
                       <div
-                        *ngIf="submitted && f['table'].errors"
+                        *ngIf="f['table'].dirty && f['table'].errors"
                         class="invalid-feedback"
                       >
                         <div *ngIf="f['table'].errors['required']">
-                          Table No. is required
+                          Field is Mandatory
+                        </div>
+                        <div *ngIf="f['table'].errors['pattern']">
+                          Please enter a valid number
                         </div>
                       </div>
                     </div>
 
                     <button
+                    [disabled]="detailForm.invalid"
                       (click)="submit()"
                       type="button"
                       class="btn btn-primary btn-block btn-lg"

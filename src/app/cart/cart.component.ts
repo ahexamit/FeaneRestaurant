@@ -35,5 +35,5 @@ export class CartComponent implements OnInit {
     } else {
       return (this.placeOrder = false);
     }
-  } 
+  }
 }

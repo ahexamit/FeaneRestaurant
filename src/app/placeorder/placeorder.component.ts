@@ -35,9 +35,14 @@ export class PlaceorderComponent implements OnInit {
   }
   public formData(): void {
     this.detailForm = this.fb.group({
-      name: ['',[ Validators.required]],
-      mobile: ['', Validators.required],
-      table: ['', Validators.required],
+      name: ['', [Validators.required, Validators.pattern("^[a-zA-Z -']+")]],
+
+      mobile: [
+        '',
+        [Validators.required, Validators.pattern('^((\\+91-?)|0)?[0-9]{10}$')],
+      ],
+
+      table: ['', [Validators.required, Validators.pattern('^[0-9]*$')]],
     });
   }
 }
