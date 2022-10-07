@@ -52,17 +52,7 @@
                           'is-invalid': f['email'].dirty && f['email'].errors
                         }"
                       />
-                      <div
-                        *ngIf="f['email'].dirty && f['email'].errors"
-                        class="invalid-feedback"
-                      >
-                        <div *ngIf="f['email'].errors['required']">
-                          Email is Required
-                        </div>
-                        <div *ngIf="f['email'].errors['email']">
-                          invaild email id
-                        </div>
-                      </div>
+                    0
                     </div>
                     <div class="form-outline mb-5">
                       <label class="form-label" for="typeText"

@@ -11,6 +11,7 @@ import { CartComponent } from './cart/cart.component';
 import { PlaceorderComponent } from './placeorder/placeorder.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BooktableComponent } from './booktable/booktable.component';
+import { FeedbackFormComponent } from './feedback-form/feedback-form.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { BooktableComponent } from './booktable/booktable.component';
     FooterComponent,
     CartComponent,
     PlaceorderComponent,
-    BooktableComponent
+    BooktableComponent,
+    FeedbackFormComponent
   ],
   imports: [
     BrowserModule,

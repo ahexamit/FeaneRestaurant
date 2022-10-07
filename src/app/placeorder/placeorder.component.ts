@@ -42,7 +42,7 @@ export class PlaceorderComponent implements OnInit {
         [Validators.required, Validators.pattern('^((\\+91-?)|0)?[0-9]{10}$')],
       ],
 
-      table: ['', [Validators.required, Validators.pattern('^[0-9]*$')]],
+      table: ['', [Validators.required, Validators.pattern('[0-2]?[0-9]?')]],
     });
   }
 }

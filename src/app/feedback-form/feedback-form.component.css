@@ -1,0 +1,117 @@
+.body {
+  margin: 0;
+  background-color: #808080;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+}
+
+.main-container {
+  width: 50%;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+#title {
+  color: brown;
+  font-style: italic;
+  margin-bottom: 0;
+}
+
+.main-container h2 {
+  columns: black;
+  font-style: italic;
+  font-weight: 200;
+  text-decoration: underline;
+}
+
+#description {
+  font-size: 20px;
+  margin-top: 0;
+  letter-spacing: 1.5px;
+  font-weight: 100;
+  color: blueviolet;
+}
+
+.labels label {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 13px;
+  letter-spacing: 1px;
+}
+
+.input-field {
+  margin-top: 5px;
+  margin-bottom: 10px;
+  width: 250px;
+  height: 30px;
+  padding-left: 10px;
+  border: 1px solid rgb(188, 188, 188);
+  border-radius: 5px;
+  outline: none;
+}
+
+span {
+  color: red;
+  font-size: 14px;
+}
+
+.location {
+  letter-spacing: 1.2px;
+  font-size: 5px;
+}
+
+.rightTab2 .labels label {
+  margin-top: 20px;
+  font-size: 18px;
+  margin-top: 0;
+  letter-spacing: 1.5px;
+  font-weight: bold;
+  font-family: "Roboto";
+  color: blueviolet;
+}
+
+#preferences {
+  /* background-color: blue;  */
+  padding: 0;
+  height: 120px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+/* #preferenecs label {
+  margin-top: 5px;
+} */
+
+.userRatings {
+  margin-right: 10px;
+}
+
+.checkbox {
+  display: flex;
+  align-items: center;
+}
+
+.rowTab .labels label {
+  margin-top: 20px;
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+
+textarea {
+  margin-top: 15px;
+  height: 100px;
+}
+
+#submit {
+  width: 90px;
+  height: 30px;
+  background-color: rgb(82, 82, 237);
+  border: none;
+  color: white;
+  border-radius: 6px;
+}

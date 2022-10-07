@@ -29,7 +29,7 @@ export class BooktableComponent implements OnInit {
         [Validators.required, Validators.pattern('^((\\+91-?)|0)?[0-9]{10}$')],
       ],
       time: ['', Validators.required],
-      people: ['', [Validators.required, Validators.pattern('^[0-9]*$')]],
+      people: ['', [Validators.required, Validators.pattern('^[0-9]*$'), Validators.pattern('[0-1]?[0-9]?')]],
     });
   }
   public get f(): { [key: string]: AbstractControl } {

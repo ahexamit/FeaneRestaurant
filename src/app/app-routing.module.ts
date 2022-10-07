@@ -21,6 +21,7 @@ const routes: Routes = [
     loadChildren: () =>
       import('./booktable/booktable.module').then((m) => m.BooktableModule),
   },
+  {path:'feedback', loadChildren: () => import('./feedback-form/feedback-form.module').then((m) => m.FeedbackFormModule)},
   { path: '', component: DashboardComponent },
 ];
 
